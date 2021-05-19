@@ -54,6 +54,35 @@ h6 {
   margin: 0 0 5px;
 }
 
+.clip {
+  position: absolute;
+  clip-path: circle(1px);
+  color: transparent;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  padding: 15px 20px 0;
+
+  nav {
+    display: flex;
+
+    .tab-header {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $color-faint;
+      padding: 7px 15px;
+      background-color: $color-faint;
+
+      &.active {
+        background-color: $color-blue;
+        color: $color-light;
+      }
+    }
+  }
+}
+
 .home-wrap {
   display: flex;
   flex-flow: row-reverse nowrap;
