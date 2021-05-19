@@ -2,6 +2,7 @@ $color-white: #fff;
 $color-light: #fff;
 $color-muted: #9da5af;
 $color-blue: #091e42;
+$color-green: #033003;
 $color-faint: #dbd8d7;
 
 $break-points: (
@@ -61,26 +62,45 @@ h6 {
 }
 
 .main-header {
-  position: sticky;
+  position: absolute;
   top: 0;
-  padding: 15px 20px 0;
+  left: 0;
+  width: 45px;
+  height: 100vh;
 
   nav {
-    display: flex;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
 
     .tab-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       outline: none;
       border: none;
       border-bottom: 1px solid $color-faint;
-      padding: 7px 15px;
-      background-color: $color-faint;
+      background-color: $color-blue;
+      color: $color-light;
 
       &.active {
-        background-color: $color-blue;
-        color: $color-light;
+        background-color: $color-green;
+      }
+
+      span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-weight: bold;
+        font-size: 0.7rem;
+        text-transform: uppercase;
       }
     }
   }
+}
+
+.main {
+  padding-left: 45px;
 }
 
 .home-wrap {

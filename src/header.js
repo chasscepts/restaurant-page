@@ -26,13 +26,16 @@ const elementSetup = (() => {
   ['Home', 'Menu', 'Contact'].forEach((item) => {
     const btn = document.createElement('button');
     btn.classList.add('tab-header');
-    btn.textContent = item;
     const page = item.toLowerCase();
     btn.addEventListener('click', () => handleClick(btn, page));
     if (!homeHeader) {
       homeHeader = btn;
     }
     nav.append(btn);
+
+    const span = document.createElement('span');
+    span.textContent = item;
+    btn.append(span);
   });
 
   return { element, homeHeader };
