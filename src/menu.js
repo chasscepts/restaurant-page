@@ -7,8 +7,6 @@ import image6 from './assets/fresh-juice.jpg';
 import image7 from './assets/roasted-beef-with-mushroom-sauce.jpg';
 import image8 from './assets/tea-coffee-cappuccino.jpg';
 
-// Photo by <a href="https://unsplash.com/@jipy32?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jean-Philippe Delberghe</a> on <a href="https://unsplash.com/s/photos/interior?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
 const photoCredit = 'Photo Credit: <a target="_blank" href="https://www.postermywall.com/index.php/d/sirle-kabanen">Sirle K</a>';
 
 const menus = [
