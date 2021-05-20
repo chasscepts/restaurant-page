@@ -219,3 +219,88 @@ h6 {
     }
   }
 }
+
+.contact-wrap {
+  display: flex;
+
+  .contact-aside {
+    padding: 30px;
+    height: 100vh;
+    border-right: 1px solid $color-faint;
+
+    .contact-card {
+      margin-bottom: 15px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0 4px rgba(0,0,0,0.4);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .card-text {
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 0.7rem;
+        color: $color-blue;
+      }
+    }
+  }
+
+  .contact-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-wrap {
+      max-width: 450px;
+      width: 100%;
+      padding: 40px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.4);
+
+      .contact-heading {
+        margin-bottom: 20px;
+        color: $color-blue;
+      }
+
+      textarea {
+        outline: none;
+        border: none;
+        padding: 20px;
+        min-height: 200px;
+        resize: vertical;
+        width: 100%;
+        background-color: $color-faint;
+      }
+
+      .text-input{
+        outline: none;
+        border: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: $color-faint;
+      }
+
+      .submit-wrap {
+        margin-top: 20px;
+      }
+
+      .submit {
+        display: block;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: $color-blue;
+        color: $color-light;
+        font-weight: bold;
+        font-size: 0.7rem;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
