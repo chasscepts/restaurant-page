@@ -1,5 +1,6 @@
 import header from './header';
 import home from './home';
+import menu from './menu';
 import './style.scss';
 
 const root = document.querySelector('#content');
@@ -10,6 +11,7 @@ root.append(main);
 
 const pages = {
   home: home(),
+  menu,
 };
 
 header.setListener((page) => {
