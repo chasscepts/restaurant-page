@@ -11,7 +11,7 @@ root.append(header.element);
 root.append(main);
 
 const pages = {
-  home: home(),
+  home,
   menu,
   contact,
 };

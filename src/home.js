@@ -1,21 +1,45 @@
-import dish from './dish.jpg';
+import circleDish from './assets/circular-dish.png';
 
-export default function home() {
+// Photo by <a href="https://unsplash.com/@ikredenets?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Irene Kredenets</a> on <a href="https://unsplash.com/s/photos/dish?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+const h = `
+<svg viewBox="0 0 500 500">
+  <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+  <text width="500">
+    <textPath xlink:href="#curve">
+      Taste Restaurant
+    </textPath>
+  </text>
+</svg>`;
+
+const home = (() => {
   const wrap = document.createElement('div');
   wrap.classList.add('home-wrap');
-  const h1 = document.createElement('h1');
-  h1.innerHTML = 'Taste Restaurant<span>Experience The Delight</span>';
-  wrap.append(h1);
-  const imageWrap = document.createElement('div');
-  imageWrap.classList.add('home-image-wrap');
-  wrap.append(imageWrap);
-  const img = new Image();
-  img.src = dish;
-  imageWrap.append(img);
-  const unsplashWrap = document.createElement('div');
-  unsplashWrap.classList.add('home-unsplash-attr');
-  unsplashWrap.innerHTML = 'Photo Credit: <a target="_blank" href="https://unsplash.com/@louishansel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Louis Hansel</a> on <a target="_blank" href="https://unsplash.com/s/photos/dishes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
-  imageWrap.append(unsplashWrap);
-
+  const sphere = document.createElement('div');
+  sphere.classList.add('sphere');
+  wrap.append(sphere);
+  const dummy = document.createElement('div');
+  dummy.classList.add('dummy');
+  sphere.append(dummy);
+  const inner = document.createElement('div');
+  inner.classList.add('home-inner');
+  sphere.append(inner);
+  const svg = document.createElement('div');
+  svg.classList.add('svg-wrap');
+  svg.innerHTML = h;
+  inner.append(svg);
+  const dish = new Image();
+  dish.src = circleDish;
+  dish.classList.add('sphere-dish');
+  inner.append(dish);
+  const dishSmoother = document.createElement('div');
+  dishSmoother.classList.add('sphere-dish-smoother');
+  inner.append(dishSmoother);
+  const rider = document.createElement('div');
+  rider.classList.add('rider');
+  rider.textContent = 'Experience The Delight';
+  inner.append(rider);
   return wrap;
-}
+})();
+
+export default home;
