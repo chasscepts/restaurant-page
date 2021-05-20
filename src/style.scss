@@ -68,7 +68,7 @@ h6 {
   width: 45px;
   height: 100vh;
 
-  nav {
+  .main-nav {
     height: 100%;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
@@ -89,7 +89,7 @@ h6 {
         background-color: $color-green;
       }
 
-      span {
+      .header-text {
         writing-mode: vertical-rl;
         text-orientation: upright;
         font-weight: bold;
@@ -121,7 +121,6 @@ h6 {
 
     .dummy {
       margin-top: 100%;
-      /* 1:1 aspect ratio */
     }
 
     .home-inner {
@@ -175,34 +174,6 @@ h6 {
 
     text {
       fill: $color-light;
-    }
-  }
-
-  h1 {
-    color: $color-blue;
-    font-size: 1.5rem;
-    padding-left: 20px;
-
-    span {
-      display: block;
-      margin-top: 10px;
-      font-size: 1rem;
-    }
-  }
-
-  .home-image-wrap {
-    position: relative;
-
-    .home-unsplash-attr {
-      position: absolute;
-      bottom: 15px;
-      left: 20px;
-      color: $color-light;
-      font-size: 0.9rem;
-
-      a {
-        text-decoration: underline;
-      }
     }
   }
 }
@@ -301,7 +272,7 @@ h6 {
       padding: 15px;
       display: flex;
       align-items: center;
-      box-shadow: 0 0 4px rgba(0,0,0,0.4);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 
       &:last-child {
         margin-bottom: 0;
@@ -326,7 +297,7 @@ h6 {
       max-width: 450px;
       width: 100%;
       padding: 40px;
-      box-shadow: 0 0 4px rgba(0,0,0,0.4);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 
       .contact-heading {
         margin-bottom: 20px;
@@ -343,7 +314,7 @@ h6 {
         background-color: $color-faint;
       }
 
-      .text-input{
+      .text-input {
         outline: none;
         border: none;
         display: block;

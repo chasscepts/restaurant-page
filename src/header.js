@@ -19,6 +19,7 @@ const elementSetup = (() => {
   const element = document.createElement('header');
   element.classList.add('main-header');
   const nav = document.createElement('nav');
+  nav.classList.add('main-nav');
   element.append(nav);
 
   let homeHeader;
@@ -34,6 +35,7 @@ const elementSetup = (() => {
     nav.append(btn);
 
     const span = document.createElement('span');
+    span.classList.add('header-text');
     span.textContent = item;
     btn.append(span);
   });
