@@ -83,6 +83,7 @@ h6 {
       border-bottom: 1px solid $color-faint;
       background-color: $color-blue;
       color: $color-light;
+      cursor: pointer;
 
       &.active {
         background-color: $color-green;
@@ -133,6 +134,87 @@ h6 {
 
       a {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+.menu-wrap {
+  display: flex;
+  height: 100vh;
+  position: relative;
+
+  .menu-aside {
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    background: url(./assets/menu-aside-bg.jpg);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+
+    .menu-link {
+      flex: 0 0 10%;
+      background-color: #fff;
+      color: $color-blue;
+      font-weight: bold;
+      font-size: 0.7rem;
+      border-radius: 8px;
+      padding: 0 15px;
+      cursor: pointer;
+
+      &.active {
+        color: #fff;
+        background-color: #8b0303;
+      }
+    }
+  }
+
+  .menu-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./assets/breakfast-corner.jpg);
+    background-size: 100% 100%;
+
+    .menu-display-wrap {
+      color: $color-light;
+      background-color: $color-blue;
+      width: 100%;
+      max-width: 400px;
+      font-size: 0.7rem;
+      padding-bottom: 15px;
+      border-radius: 20px;
+
+      .menu-poster-wrap {
+        position: relative;
+        width: 100%;
+
+        .menu-item-poster {
+          width: 100%;
+          border-radius: 20px;
+        }
+
+        .menu-poster-credit-wrap {
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          width: 100%;
+          padding-right: 10px;
+          text-align: right;
+          font-weight: bold;
+          color: $color-blue;
+          font-size: 0.6rem;
+        }
+      }
+
+      .menu-title,
+      .menu-price {
+        font-weight: bold;
+        padding-left: 15px;
+        line-height: 1.2rem;
       }
     }
   }
