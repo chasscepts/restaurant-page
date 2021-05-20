@@ -1,0 +1,345 @@
+$color-white: #fff;
+$color-light: #fff;
+$color-muted: #9da5af;
+$color-blue: #091e42;
+$color-green: #033003;
+$color-faint: #dbd8d7;
+
+$break-points: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin media-break($break-point: md) {
+  $width: map-get($break-points, $break-point);
+  $break: if($width, $width, 768px);
+
+  @media (min-width: $break) {
+    @content;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px;
+}
+
+.clip {
+  position: absolute;
+  clip-path: circle(1px);
+  color: transparent;
+}
+
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 100vh;
+
+  .main-nav {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+
+    .tab-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $color-faint;
+      background-color: $color-blue;
+      color: $color-light;
+      cursor: pointer;
+
+      &.active {
+        background-color: $color-green;
+      }
+
+      .header-text {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-weight: bold;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.main {
+  padding-left: 45px;
+}
+
+.home-wrap {
+  width: 100%;
+  height: 100vh;
+  background: url(./assets/breakfast-corner.jpg);
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sphere {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%;
+
+    .dummy {
+      margin-top: 100%;
+    }
+
+    .home-inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $color-blue;
+      border-radius: 50%;
+
+      .sphere-dish {
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        left: 20%;
+        top: 20%;
+      }
+
+      .sphere-dish-smoother {
+        position: absolute;
+        width: calc(60% + 4px);
+        height: calc(60% + 4px);
+        left: calc(20% - 2px);
+        top: calc(20% - 2px);
+        border-radius: 50%;
+        border: 4px solid $color-blue;
+      }
+
+      .rider {
+        position: absolute;
+        width: 100%;
+        bottom: -60px;
+        padding: 7px 0;
+        background-color: $color-light;
+        color: $color-blue;
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .svg-wrap {
+    font-family: serif;
+    font-size: 64px;
+
+    path {
+      fill: transparent;
+    }
+
+    text {
+      fill: $color-light;
+    }
+  }
+}
+
+.menu-wrap {
+  display: flex;
+  height: 100vh;
+  position: relative;
+
+  .menu-aside {
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    background: url(./assets/menu-aside-bg.jpg);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+
+    .menu-link {
+      flex: 0 0 10%;
+      background-color: #fff;
+      color: $color-blue;
+      font-weight: bold;
+      font-size: 0.7rem;
+      border-radius: 8px;
+      padding: 0 15px;
+      cursor: pointer;
+
+      &.active {
+        color: #fff;
+        background-color: #8b0303;
+      }
+    }
+  }
+
+  .menu-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./assets/breakfast-corner.jpg);
+    background-size: 100% 100%;
+
+    .menu-display-wrap {
+      color: $color-light;
+      background-color: $color-blue;
+      width: 100%;
+      max-width: 400px;
+      font-size: 0.7rem;
+      padding-bottom: 15px;
+      border-radius: 20px;
+
+      .menu-poster-wrap {
+        position: relative;
+        width: 100%;
+
+        .menu-item-poster {
+          width: 100%;
+          border-radius: 20px;
+        }
+
+        .menu-poster-credit-wrap {
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          width: 100%;
+          padding-right: 10px;
+          text-align: right;
+          font-weight: bold;
+          color: $color-blue;
+          font-size: 0.6rem;
+        }
+      }
+
+      .menu-title,
+      .menu-price {
+        font-weight: bold;
+        padding-left: 15px;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}
+
+.contact-wrap {
+  display: flex;
+
+  .contact-aside {
+    padding: 30px;
+    height: 100vh;
+    border-right: 1px solid $color-faint;
+
+    .contact-card {
+      margin-bottom: 15px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .card-text {
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 0.7rem;
+        color: $color-blue;
+      }
+    }
+  }
+
+  .contact-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-wrap {
+      max-width: 450px;
+      width: 100%;
+      padding: 40px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+      .contact-heading {
+        margin-bottom: 20px;
+        color: $color-blue;
+      }
+
+      textarea {
+        outline: none;
+        border: none;
+        padding: 20px;
+        min-height: 200px;
+        resize: vertical;
+        width: 100%;
+        background-color: $color-faint;
+      }
+
+      .text-input {
+        outline: none;
+        border: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: $color-faint;
+      }
+
+      .submit-wrap {
+        margin-top: 20px;
+      }
+
+      .submit {
+        display: block;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: $color-blue;
+        color: $color-light;
+        font-weight: bold;
+        font-size: 0.7rem;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
